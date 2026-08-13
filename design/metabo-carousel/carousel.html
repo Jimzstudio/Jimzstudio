@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>METABO+ Coffee — Carousel</title>
+<style>
+  @font-face{font-family:'PlayfairLocal';src:local('Playfair Display');}
+  :root{
+    --blush:#F5C9D8;
+    --blush-2:#EFB9CC;
+    --blush-soft:#FBE4EC;
+    --cream:#FBF4F1;
+    --cream-2:#F4E8E3;
+    --espresso:#3B2A26;
+    --espresso-2:#2C1F1C;
+    --mocha:#7A5A52;
+    --mauve:#C99AA9;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;}
+  body{background:#8a8a8a;font-family:'Jost',sans-serif;}
+  .sheet{display:flex;flex-direction:column;align-items:center;gap:40px;padding:40px;}
+
+  .slide{
+    width:1080px;height:1080px;position:relative;overflow:hidden;
+    background:var(--cream);color:var(--espresso);
+  }
+  .grain{position:absolute;inset:0;pointer-events:none;opacity:.05;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='.6'/></svg>");}
+  .vignette{position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(120% 90% at 50% 40%, rgba(255,255,255,0) 55%, rgba(59,42,38,.07) 100%);}
+
+  /* ---------- shared type ---------- */
+  .serif{font-family:'Playfair Display',serif;}
+  .eyebrow{font-family:'Jost',sans-serif;font-weight:500;font-size:19px;letter-spacing:.42em;text-transform:uppercase;}
+  .brandmark{display:flex;align-items:center;gap:14px;}
+  .brandmark .b{font-family:'Playfair Display',serif;font-size:26px;font-weight:600;letter-spacing:.30em;}
+  .rule{height:1px;background:currentColor;opacity:.35;}
+  .dot{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.5;}
+
+  .pad{position:absolute;inset:74px;}
+  .top-bar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;}
+  .bottom-bar{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;align-items:flex-end;}
+  .tiny{font-size:16px;letter-spacing:.30em;text-transform:uppercase;font-weight:400;opacity:.62;}
+
+  /* ---------- product box illustration ---------- */
+  .stage{position:relative;perspective:1800px;}
+  .box{position:relative;width:352px;height:470px;transform-style:preserve-3d;
+    transform:rotateX(-4deg) rotateY(-27deg) rotateZ(3deg);}
+  .face{position:absolute;top:0;left:0;}
+  .front{width:352px;height:470px;background:var(--blush);overflow:hidden;
+    box-shadow:inset -18px 0 34px rgba(59,42,38,.06);}
+  .side{width:120px;height:470px;background:linear-gradient(90deg,#C79FAE,#B98D9D);
+    transform-origin:left center;transform:rotateY(90deg);left:352px;}
+  .top{width:352px;height:120px;background:#E7BACB;transform-origin:top center;transform:rotateX(90deg) translateZ(0);top:-120px;}
+  .panel{position:absolute;left:0;top:0;width:126px;height:100%;background:var(--espresso);
+    border-top-right-radius:64px;border-bottom-right-radius:8px;display:flex;align-items:center;justify-content:center;}
+  .panel span{font-family:'Playfair Display',serif;color:var(--blush-soft);font-size:56px;font-weight:600;
+    letter-spacing:.02em;transform:rotate(-90deg);white-space:nowrap;}
+  .front .copy{position:absolute;right:20px;top:96px;width:186px;text-align:right;}
+  .front .copy h4{font-family:'Playfair Display',serif;font-size:52px;font-weight:500;line-height:.95;}
+  .front .copy p{font-size:12px;letter-spacing:.10em;line-height:1.5;margin-top:12px;text-transform:uppercase;font-weight:400;}
+  .front .foot{position:absolute;right:20px;bottom:22px;text-align:right;}
+  .front .foot .n{font-family:'Jost',sans-serif;font-size:34px;font-weight:400;line-height:1;}
+  .front .foot .s{font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-top:4px;}
+  .front .foot .d{font-size:8.5px;letter-spacing:.10em;text-transform:uppercase;margin-top:10px;opacity:.8;}
+  .box-shadow{position:absolute;left:8%;bottom:-42px;width:84%;height:44px;border-radius:50%;
+    background:radial-gradient(50% 50% at 50% 50%, rgba(59,42,38,.30), rgba(59,42,38,0) 70%);filter:blur(6px);}
+
+  /* sachet */
+  .sachet{width:300px;height:74px;border-radius:5px;position:relative;
+    background:linear-gradient(180deg,#EDEDEF 0%,#FBFBFC 22%,#D9D9DD 55%,#F3F3F5 78%,#CFCFD4 100%);
+    box-shadow:0 18px 34px rgba(59,42,38,.20);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;}
+  .sachet::before,.sachet::after{content:"";position:absolute;top:0;bottom:0;width:26px;
+    background:repeating-linear-gradient(90deg,#D5D5DA 0 3px,#F2F2F5 3px 6px);opacity:.9;}
+  .sachet::before{left:0;border-radius:5px 0 0 5px;}
+  .sachet::after{right:0;border-radius:0 5px 5px 0;}
+  .sachet .m{font-family:'Playfair Display',serif;font-size:21px;font-weight:600;color:var(--espresso);letter-spacing:.04em;}
+  .sachet .t{font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--mocha);}
+
+  /* ---------- SLIDE 1 ---------- */
+  .s1 .arch{position:absolute;right:-40px;top:0;width:610px;height:1080px;background:var(--blush);
+    border-top-left-radius:320px;border-bottom-left-radius:60px;}
+  .s1 .archline{position:absolute;right:-4px;top:36px;width:600px;height:1008px;
+    border:1px solid rgba(59,42,38,.16);border-right:none;
+    border-top-left-radius:300px;border-bottom-left-radius:52px;}
+  .s1 .hl{font-family:'Playfair Display',serif;font-size:96px;line-height:.94;font-weight:500;letter-spacing:-.015em;}
+  .s1 .hl em{font-style:italic;}
+  .s1 .sub{font-size:23px;line-height:1.6;font-weight:300;max-width:415px;margin-top:34px;color:#4A352F;}
+  .s1 .badge{display:inline-flex;align-items:center;gap:12px;margin-top:44px;padding:15px 28px;
+    border:1px solid rgba(59,42,38,.35);border-radius:100px;font-size:15px;letter-spacing:.26em;text-transform:uppercase;}
+  .s1 .stage{position:absolute;right:88px;top:318px;}
+  .s1 .sachet-wrap{position:absolute;right:196px;bottom:142px;transform:rotate(-8deg);}
+
+  /* ---------- SLIDE 2 & 3 ---------- */
+  .benefit-head{position:absolute;top:132px;left:0;right:0;}
+  .benefit-head h2{font-family:'Playfair Display',serif;font-size:72px;line-height:1.06;font-weight:500;letter-spacing:-.01em;margin-top:24px;}
+  .benefit-head h2 em{font-style:italic;}
+  .cards{position:absolute;left:0;right:0;top:372px;bottom:0px;display:flex;flex-direction:column;justify-content:center;}
+  .card{display:flex;gap:36px;align-items:flex-start;padding:60px 0;}
+  .card + .card{border-top:1px solid rgba(59,42,38,.18);}
+  .icon{flex:0 0 auto;width:104px;height:104px;border-radius:50%;background:var(--blush);
+    display:flex;align-items:center;justify-content:center;position:relative;margin-top:6px;}
+  .icon::after{content:"";position:absolute;inset:-9px;border-radius:50%;border:1px solid rgba(59,42,38,.20);}
+  .card .num{font-family:'Playfair Display',serif;font-size:21px;opacity:.55;letter-spacing:.06em;}
+  .card h3{font-family:'Playfair Display',serif;font-size:47px;font-weight:500;line-height:1.05;margin:4px 0 12px;}
+  .card p{font-size:22px;line-height:1.55;font-weight:300;color:#4A352F;max-width:690px;}
+  .s2 .wash{position:absolute;left:0;top:0;width:100%;height:340px;
+    background:linear-gradient(180deg,var(--blush-soft),rgba(251,244,241,0));}
+  .s3 .wash{position:absolute;left:0;top:0;width:100%;height:340px;
+    background:linear-gradient(180deg,var(--blush-soft),rgba(251,244,241,0));}
+
+  /* ---------- SLIDE 4 ---------- */
+  .s4{background:var(--espresso);color:var(--cream);}
+  .s4 .glow{position:absolute;left:50%;top:-260px;width:900px;height:900px;transform:translateX(-50%);
+    background:radial-gradient(circle, rgba(245,201,216,.24), rgba(245,201,216,0) 62%);}
+  .s4 .arcline{position:absolute;left:50%;top:150px;width:760px;height:760px;transform:translateX(-50%);
+    border:1px solid rgba(245,201,216,.22);border-radius:50%;}
+  .s4 h2{font-family:'Playfair Display',serif;font-size:84px;line-height:1.0;font-weight:500;letter-spacing:-.01em;}
+  .s4 h2 em{font-style:italic;color:var(--blush);}
+  .s4 .lede{font-size:23px;line-height:1.6;font-weight:300;color:#E9D9D4;max-width:610px;margin-top:24px;}
+  .steps{display:flex;gap:0;margin-top:46px;}
+  .step{flex:1;padding:0 26px;}
+  .step:first-child{padding-left:0;}
+  .step + .step{border-left:1px solid rgba(245,201,216,.24);}
+  .step .k{font-family:'Playfair Display',serif;font-size:44px;color:var(--blush);line-height:1;}
+  .step .v{font-size:17px;line-height:1.45;margin-top:12px;letter-spacing:.02em;color:#E9D9D4;font-weight:300;}
+  .cta{display:inline-flex;align-items:center;gap:16px;margin-top:48px;background:var(--blush);color:var(--espresso);
+    padding:26px 48px;border-radius:100px;font-size:19px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;}
+  .s4 .disclaim{font-size:13px;line-height:1.5;letter-spacing:.06em;color:rgba(233,217,212,.55);max-width:560px;}
+  .s4 .sachet-wrap{position:absolute;right:56px;top:286px;transform:rotate(-14deg) scale(.94);}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+<!-- ==================== SLIDE 1 — HOOK ==================== -->
+<section class="slide s1" id="slide-1">
+  <div class="arch"></div>
+  <div class="archline"></div>
+
+  <div class="stage">
+    <div class="box">
+      <div class="face side"></div>
+      <div class="face front">
+        <div class="panel"><span>METABO+</span></div>
+        <div class="copy">
+          <h4>Coffee</h4>
+          <p>Supports metabolism<br>&amp; healthy lifestyle</p>
+        </div>
+        <div class="foot">
+          <div class="n">15</div>
+          <div class="s">Sachets</div>
+          <div class="d">Dietary Supplement · 20g</div>
+        </div>
+      </div>
+    </div>
+    <div class="box-shadow"></div>
+  </div>
+
+  <div class="sachet-wrap">
+    <div class="sachet"><div class="m">METABO+ Coffee</div><div class="t">Supports metabolism</div></div>
+  </div>
+
+  <div class="pad">
+    <div class="top-bar">
+      <div class="brandmark"><span class="b">PRINSES</span></div>
+      <div class="tiny">Est. Wellness</div>
+    </div>
+
+    <div style="position:absolute;top:296px;left:0;width:560px;">
+      <div class="eyebrow" style="opacity:.7">Metabo+ Coffee</div>
+      <h1 class="hl" style="margin-top:30px;">Your daily<br>coffee,<br><em>upgraded.</em></h1>
+      <p class="sub">One rich, creamy cup a day — crafted to support your metabolism, your energy and the shape you're working for.</p>
+      <div class="badge">4 Everyday Benefits</div>
+    </div>
+
+    <div class="bottom-bar">
+      <div class="tiny">Dietary Supplement</div>
+      <div class="tiny">Swipe →</div>
+    </div>
+  </div>
+  <div class="vignette"></div><div class="grain"></div>
+</section>
+
+<!-- ==================== SLIDE 2 — BENEFITS 01 / 02 ==================== -->
+<section class="slide s2" id="slide-2">
+  <div class="wash"></div>
+  <div class="pad">
+    <div class="top-bar">
+      <div class="brandmark"><span class="b">PRINSES</span></div>
+      <div class="tiny">01 — 02</div>
+    </div>
+
+    <div class="benefit-head">
+      <div class="eyebrow" style="opacity:.7">Why drink it every day</div>
+      <h2>Small ritual.<br><em>Real difference.</em></h2>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="icon">
+          <svg width="52" height="52" viewBox="0 0 48 48" fill="none" stroke="#3B2A26" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 6h14"/><path d="M17 42h14"/>
+            <path d="M18 7c0 7 8 9 8 17s-8 10-8 17"/>
+            <path d="M30 7c0 7-8 9-8 17s8 10 8 17"/>
+          </svg>
+        </div>
+        <div>
+          <div class="num">01</div>
+          <h3>A Flatter, Lighter Tummy</h3>
+          <p>Helps ease daily bloating so your waistline feels lighter and your clothes sit the way you like them.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+          <svg width="52" height="52" viewBox="0 0 48 48" fill="none" stroke="#3B2A26" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M27 5 14 26h9l-2 17 13-21h-9l2-17Z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="num">02</div>
+          <h3>Energy That Lasts</h3>
+          <p>A smooth lift that carries you from the school run to the last email — without the harsh 3 p.m. crash.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="vignette"></div><div class="grain"></div>
+</section>
+
+<!-- ==================== SLIDE 3 — BENEFITS 03 / 04 ==================== -->
+<section class="slide s3" id="slide-3">
+  <div class="wash"></div>
+  <div class="pad">
+    <div class="top-bar">
+      <div class="brandmark"><span class="b">PRINSES</span></div>
+      <div class="tiny">03 — 04</div>
+    </div>
+
+    <div class="benefit-head">
+      <div class="eyebrow" style="opacity:.7">Why drink it every day</div>
+      <h2>Consistency is<br><em>the whole secret.</em></h2>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="icon">
+          <svg width="52" height="52" viewBox="0 0 48 48" fill="none" stroke="#3B2A26" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 40h28l-6-22H16l-6 22Z"/>
+            <path d="M20 18v-3a4 4 0 0 1 8 0v3"/>
+            <path d="M18 26h12"/><path d="M24 26v6"/>
+          </svg>
+        </div>
+        <div>
+          <div class="num">03</div>
+          <h3>Weight Management</h3>
+          <p>Curbs the in-between-meals snacking that quietly undoes your progress, so portions stay effortless.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+          <svg width="52" height="52" viewBox="0 0 48 48" fill="none" stroke="#3B2A26" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 5c6 8 12 11 12 20a12 12 0 0 1-24 0C12 17 18 14 24 5Z"/>
+            <path d="M24 40a6 6 0 0 0 6-6c0-4-3-5-6-9-3 4-6 5-6 9a6 6 0 0 0 6 6Z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="num">04</div>
+          <h3>A Metabolism In Motion</h3>
+          <p>Daily support keeps your body working with you — turning what you eat into energy instead of storage.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="vignette"></div><div class="grain"></div>
+</section>
+
+<!-- ==================== SLIDE 4 — RITUAL + CTA ==================== -->
+<section class="slide s4" id="slide-4">
+  <div class="glow"></div>
+  <div class="arcline"></div>
+
+  <div class="sachet-wrap">
+    <div class="sachet"><div class="m">METABO+ Coffee</div><div class="t">One sachet daily</div></div>
+  </div>
+
+  <div class="pad">
+    <div class="top-bar">
+      <div class="brandmark" style="color:var(--blush)"><span class="b">PRINSES</span></div>
+      <div class="tiny" style="color:var(--blush);opacity:.75">Metabo+ Coffee</div>
+    </div>
+
+    <div style="position:absolute;top:196px;left:0;width:700px;">
+      <div class="eyebrow" style="color:var(--blush);opacity:.85">The 15-day ritual</div>
+      <h2 style="margin-top:28px;">Make it your<br><em>morning habit.</em></h2>
+      <p class="lede">One sachet, one cup, every single morning. Fifteen sachets per box — fifteen days of showing up for yourself.</p>
+
+      <div class="steps" style="width:672px;">
+        <div class="step"><div class="k">01</div><div class="v">Tear one sachet<br>each morning</div></div>
+        <div class="step"><div class="k">02</div><div class="v">Stir into 150ml<br>of hot water</div></div>
+        <div class="step"><div class="k">03</div><div class="v">Sip daily &amp; stay<br>consistent</div></div>
+      </div>
+
+      <div class="cta">Message us to order <span style="font-family:'Playfair Display',serif;text-transform:none;letter-spacing:0;font-size:24px;">→</span></div>
+    </div>
+
+    <div class="bottom-bar">
+      <div class="disclaim">Food supplement. Not a substitute for a balanced diet and healthy lifestyle. Individual results may vary.</div>
+      <div class="tiny" style="color:var(--blush);opacity:.8">15 Sachets · 20g</div>
+    </div>
+  </div>
+  <div class="vignette"></div><div class="grain"></div>
+</section>
+
+</div>
+</body>
+</html>
