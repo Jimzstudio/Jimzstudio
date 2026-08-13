@@ -1,0 +1,35 @@
+services:
+  computer-use:
+    image: ghcr.io/anthropics/anthropic-quickstarts:computer-use-demo-latest
+    container_name: computer-use-demo
+
+    environment:
+      # Fails fast with a readable message if unset. Read from ./.env or your shell.
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:?ANTHROPIC_API_KEY is not set - copy .env.example to .env and fill it in}
+      # Virtual display size. 1280x800 suits web apps; 1024x768 is the docs default.
+      # Do not exceed 1920x1080 - accuracy and latency both degrade.
+      WIDTH: ${WIDTH:-1280}
+      HEIGHT: ${HEIGHT:-800}
+
+    # Bound to 127.0.0.1 on purpose. The desktop and VNC server inside this
+    # container are UNAUTHENTICATED - publishing them on 0.0.0.0 would hand a
+    # remote-control session to anyone who can reach this host.
+    ports:
+      - "127.0.0.1:8080:8080"   # combined UI: agent chat + live desktop  <- use this one
+      - "127.0.0.1:8501:8501"   # Streamlit chat only
+      - "127.0.0.1:6080:6080"   # noVNC desktop only (/vnc.html)
+      - "127.0.0.1:5900:5900"   # raw VNC, for a native client
+
+    # Persists the demo's settings and any custom system prompt between runs.
+    volumes:
+      - ${ANTHROPIC_CONFIG_DIR:-${HOME}/.anthropic}:/home/computeruse/.anthropic
+
+    stdin_open: true
+    tty: true
+
+    # The sandbox boundary. Claude has full control of everything inside this
+    # container, so cap what "inside" can reach.
+    mem_limit: 4g
+    cpus: 2.0
+    security_opt:
+      - no-new-privileges:true
