@@ -246,44 +246,41 @@ Blood-sugar and fat-loss language is treated as a **medical claim**, which is a 
 
 ---
 
-## 7. Generated image assets (Magnific)
+## 7. The finished carousel (Magnific)
 
-Built from the real product photos as references — the pink/brown PRINSES box, the 20g sachet, and the 9-ingredient chart.
+All 10 slides, in posting order. Built from your product photos as references, on a single art direction: dusty rose `#E8B9C4`, espresso brown `#3A2A2A`, warm cream `#F5EFE8`, high-contrast serif headlines, "METABO+ Coffee" wordmark top right on every slide.
 
-### Slide 5 — product hero (4 variants)
+| # | Slide | Model | Link |
+|---|---|---|---|
+| 1 | Hook — "I changed ONE cup." | GPT 2 | https://www.magnific.com/app/creation/gO9Ytl8SXO |
+| 2 | Mirror — "You know the feeling." | GPT 2 | https://www.magnific.com/app/creation/eIvKPtLdqL |
+| 3 | Tension — "And feel worse." | GPT 2 | https://www.magnific.com/app/creation/jUOAo4hLD0 |
+| 4 | The turn — spike vs. curve graph | GPT 2 | https://www.magnific.com/app/creation/eIvKPb9dqL |
+| 5 | Product hero | Nano Banana Pro | https://www.magnific.com/app/creation/Td8Fw7eVNR |
+| 6 | 9-ingredient grid | GPT 2 | https://www.magnific.com/app/creation/VXIH7iZMMU |
+| 7 | Before / With METABO+ | GPT 2 | https://www.magnific.com/app/creation/lJ4ntL4gv9 |
+| 8 | Testimonial card | GPT 2 | https://www.magnific.com/app/creation/1lwRXLur4r |
+| 9 | 3-step routine | Nano Banana Pro | https://www.magnific.com/app/creation/bxlNDin5Y2 |
+| 10 | CTA — "Ready to change one cup?" | Nano Banana Pro | https://www.magnific.com/app/creation/MBtqOs0DCm |
 
-| # | Link |
-|---|---|
-| A | https://www.magnific.com/app/creation/iGWofRU3uK |
-| B | https://www.magnific.com/app/creation/0eoQ1MmTfW |
-| C | https://www.magnific.com/app/creation/dtakgoJXSL |
-| D | https://www.magnific.com/app/creation/rg7ZcLbxtc |
+**Model choice:** GPT 2 is rank-1 for typography and infographics, so it took the seven text-led slides. Nano Banana Pro is rank-1 for brand fidelity and reference-guided product work, so it took the three slides where the box and sachet must match the real packaging.
 
-Brief: box on cream marble, poured black coffee alongside, golden morning side-light, scattered beans and dried botanicals, blush/cream palette, negative space up top for a headline.
+### Earlier text-free variants (backup)
 
-### Slide 1 — hook background (3 variants)
+Product hero, no overlay text — useful if you'd rather set type yourself:
+https://www.magnific.com/app/creation/iGWofRU3uK · https://www.magnific.com/app/creation/0eoQ1MmTfW · https://www.magnific.com/app/creation/dtakgoJXSL · https://www.magnific.com/app/creation/rg7ZcLbxtc
 
-| # | Link |
-|---|---|
-| A | https://www.magnific.com/app/creation/3zc8CczREY |
-| B | https://www.magnific.com/app/creation/s7PzMPdl8e |
-| C | https://www.magnific.com/app/creation/793TB3sJAL |
+Hook background, no overlay text:
+https://www.magnific.com/app/creation/3zc8CczREY · https://www.magnific.com/app/creation/s7PzMPdl8e · https://www.magnific.com/app/creation/793TB3sJAL
 
-Brief: extreme close-up coffee pour, steam in golden backlight, dark espresso shadow filling the upper third as a text bed. Deliberately no packaging — a visible product on slide 1 reads as an ad and gets scrolled past.
+### ⚠️ Proofread every slide before posting
 
-### ⚠️ Check the packaging lettering before you use a hero shot
+These were generated, not verified — the session's network policy blocks Magnific's image CDN, so the renders could not be opened and checked. AI models misspell text routinely, and every slide here carries type. Check each one:
 
-AI image models routinely garble text on packaging. Before publishing, zoom in on each hero variant and confirm:
+- **Slides 1–4, 6–8** — read every word. GPT 2 is the best available at text but not perfect; watch for dropped letters, doubled words, and invented extra lines.
+- **Slides 5, 9, 10** — zoom in on the packaging: "PRINSES", "METABO+" (plus sign intact), "Coffee", "15 SACHETS".
+- **Slide 4** — confirm the red line actually crashes and the rose line actually stays level. A graph that shows the opposite of your claim is worse than no graph.
+- **Slide 6** — check all nine ingredient names against the pack, especially "Psyllium Husk" and "Garcinia Cambogia".
+- **Slide 8** — "Sarah M." is a placeholder. Replace it with a real, permission-cleared customer before this goes live.
 
-- "PRINSES" on the brown spine is spelled correctly
-- "METABO+" keeps the plus sign and the correct letterforms
-- "Coffee" is the elegant serif, not a substituted font
-- "15 SACHETS" and the strapline aren't nonsense characters
-
-If a variant is perfect except for the lettering, fix that region alone with `images_retouch` rather than regenerating the whole shot — regenerating loses the composition you liked.
-
-### Still to generate
-
-- Slide 4 spike-vs-curve graph — make this in Canva/Figma, not AI. Vector charts need exact text.
-- Slide 6 ingredient grid — rebuild your existing 9-panel chart with English labels.
-- Slide 9 three-step routine — hands tearing a sachet, pouring water, stirring.
+Fix a single bad region with `images_retouch` rather than regenerating — regenerating loses the composition.
