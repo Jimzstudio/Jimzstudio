@@ -2,7 +2,9 @@
 
 **Format:** 10-slide carousel (1080 x 1080 px)
 **Objective:** Stop the scroll → build curiosity → drive swipes → click to order
-**Placeholders to fill before publishing:** `[PRICE]`, `[SITE/WHATSAPP]`, `[KEY INGREDIENTS]`, `[OFFER]`
+**Product:** PRINSES METABO+ Coffee — dietary supplement, 15 sachets x 20g (210g net)
+**Brand colours:** dusty rose pink `#E8B9C4` / deep espresso brown `#3A2A2A` / warm cream
+**Placeholders still to fill:** `[PRICE]`, `[SITE/WHATSAPP]`, `[OFFER]`, testimonial on slide 8
 
 ---
 
@@ -90,11 +92,13 @@
 
 ### SLIDE 5 — Product reveal (finally)
 
-> # Meet Metabo+ ☕
+> # PRINSES METABO+ ☕
 > ### Real coffee. Just built smarter.
 >
 > Same rich taste you already love —
-> now working *with* your body instead of against it.
+> now with 9 ingredients working alongside it.
+>
+> **15 sachets. 15 mornings.**
 
 **Visual:** Hero shot. Product front and centre, clean background, soft shadow, one beam of morning light. This is the only slide where the pack is the star.
 
@@ -102,18 +106,21 @@
 
 ### SLIDE 6 — What's inside
 
-> ## What's actually in the cup:
+> ## 9 ingredients. One cup.
 >
-> ☕ Premium roasted coffee — [KEY INGREDIENT 1]
-> 🌿 [KEY INGREDIENT 2]
-> ⚡ [KEY INGREDIENT 3]
-> 🚫 No artificial sweeteners. No fillers.
+> ☕ **Arabica Coffee** — the taste you already love
+> 🫘 **Green Coffee Bean Extract** — antioxidant-rich
+> 💪 **L-Carnitine** — supports energy conversion
+> 🍈 **Garcinia Cambogia** — a classic wellness botanical
+> 🌾 **Inulin** — prebiotic fibre for gut health
+> 🌿 **Psyllium Husk** — fibre that helps you feel full
+> 🍑 **Prune Extract** — natural digestive comfort
+> 🌼 **Dandelion Root** — traditional herbal support
+> 🌶️ **Black Pepper Extract** — helps absorption of the rest
 
-**Visual:** Flat lay — coffee beans and each botanical/ingredient laid out on a warm neutral surface, each with a thin line pointing to its label.
+**Visual:** Your existing ingredient chart is gold — rebuild it as a 3x3 grid on one slide, cream background, each ingredient photographed on wood/linen, numbered 01–09 in dusty rose. Keep English labels for this audience.
 
-> ⚠️ **Fill these in with your real ingredient list.** Vague ingredient slides kill trust faster than no ingredient slide.
-
----
+> 💡 **Split option:** ingredients are your strongest trust asset. Consider running a *second* carousel that gives each of the 9 its own slide (straight from your existing chart) — it doubles your content from one asset.
 
 ### SLIDE 7 — The switch *(second named slide — this is your differentiator)*
 
@@ -122,7 +129,7 @@
 > ✅ 30 seconds — hot water, stir, done
 > ✅ Tastes like coffee, not like "a supplement"
 > ✅ No jitters, no crash, no 4pm regret
-> ✅ Costs less per cup than a café run ☕
+> ✅ One sachet, 20g — no measuring, no blender ☕
 
 **Visual:** Side-by-side comparison card. Left column "Before" (grey, ✗). Right column "With Metabo+" (gold, ✓).
 
@@ -161,8 +168,9 @@
 
 > # Ready to change one cup?
 >
-> ☕ **Metabo+ Coffee**
-> 🎁 [OFFER — e.g. Starter pack + free shipping]
+> ☕ **PRINSES METABO+ Coffee**
+> 📦 15 sachets — a full 15-day box
+> 🎁 [OFFER — e.g. buy 2 get free shipping]
 > 💰 [PRICE]
 >
 > 👉 **DM "METABO"** or tap the link in the caption
@@ -222,3 +230,16 @@ Facebook rejects health/wellness ads for these specific things, so keep them out
 - ✅ Add your market's required disclaimer if the product is a supplement, e.g. *"Results vary. Not intended to diagnose, treat, cure or prevent any disease."*
 
 The copy above is deliberately written around **energy, focus and ritual** rather than weight loss — that keeps it publishable and keeps the promise honest.
+
+### ⚠️ Important: your Chinese ingredient chart won't translate directly
+
+Your existing 9-ingredient chart uses claims that are fine for some markets but will get a Facebook ad **rejected** if translated literally:
+
+| On your chart | Don't say on Facebook | Say instead |
+|---|---|---|
+| 燃脂助力 / 阻断脂肪 | "burns fat", "blocks fat" | "supports energy conversion" |
+| 抑制食欲 | "suppresses appetite" | "fibre that helps you feel full" |
+| 排水消肿 | "removes water weight / de-bloats" | "traditional herbal support" |
+| 控糖稳糖 | "controls blood sugar" | "antioxidant-rich" — never imply glycaemic control |
+
+Blood-sugar and fat-loss language is treated as a **medical claim**, which is a harder rejection than a generic ad decline. The slide 6 wording above is already rewritten to the safe column.
