@@ -243,3 +243,47 @@ Your existing 9-ingredient chart uses claims that are fine for some markets but 
 | 控糖稳糖 | "controls blood sugar" | "antioxidant-rich" — never imply glycaemic control |
 
 Blood-sugar and fat-loss language is treated as a **medical claim**, which is a harder rejection than a generic ad decline. The slide 6 wording above is already rewritten to the safe column.
+
+---
+
+## 7. Generated image assets (Magnific)
+
+Built from the real product photos as references — the pink/brown PRINSES box, the 20g sachet, and the 9-ingredient chart.
+
+### Slide 5 — product hero (4 variants)
+
+| # | Link |
+|---|---|
+| A | https://www.magnific.com/app/creation/iGWofRU3uK |
+| B | https://www.magnific.com/app/creation/0eoQ1MmTfW |
+| C | https://www.magnific.com/app/creation/dtakgoJXSL |
+| D | https://www.magnific.com/app/creation/rg7ZcLbxtc |
+
+Brief: box on cream marble, poured black coffee alongside, golden morning side-light, scattered beans and dried botanicals, blush/cream palette, negative space up top for a headline.
+
+### Slide 1 — hook background (3 variants)
+
+| # | Link |
+|---|---|
+| A | https://www.magnific.com/app/creation/3zc8CczREY |
+| B | https://www.magnific.com/app/creation/s7PzMPdl8e |
+| C | https://www.magnific.com/app/creation/793TB3sJAL |
+
+Brief: extreme close-up coffee pour, steam in golden backlight, dark espresso shadow filling the upper third as a text bed. Deliberately no packaging — a visible product on slide 1 reads as an ad and gets scrolled past.
+
+### ⚠️ Check the packaging lettering before you use a hero shot
+
+AI image models routinely garble text on packaging. Before publishing, zoom in on each hero variant and confirm:
+
+- "PRINSES" on the brown spine is spelled correctly
+- "METABO+" keeps the plus sign and the correct letterforms
+- "Coffee" is the elegant serif, not a substituted font
+- "15 SACHETS" and the strapline aren't nonsense characters
+
+If a variant is perfect except for the lettering, fix that region alone with `images_retouch` rather than regenerating the whole shot — regenerating loses the composition you liked.
+
+### Still to generate
+
+- Slide 4 spike-vs-curve graph — make this in Canva/Figma, not AI. Vector charts need exact text.
+- Slide 6 ingredient grid — rebuild your existing 9-panel chart with English labels.
+- Slide 9 three-step routine — hands tearing a sachet, pouring water, stirring.
