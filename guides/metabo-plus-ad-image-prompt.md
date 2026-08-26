@@ -73,22 +73,36 @@ UGC creator content aesthetic, believable and unpolished, photorealistic.
 
 ## 4. Variant B — "two more jobs" concept (1:1, static ad)
 
-```
-Minimal conceptual advertising still life, 1:1 square. A single cup of coffee
-shot top-down on a warm cream background, with three soft light beams or three
-clean line-art icons arranged around it in a row — a sunrise (wake up), a flame
-(metabolism), a leaf (easy digestion) — flat, elegant, evenly spaced, thin
-strokes in deep espresso brown. METABO+ sachet placed at a slight angle at the
-lower right. Bold negative space, studio softbox lighting, no clutter, modern
-Scandinavian brand design, warm cream / caramel / espresso palette.
+*This is the square version that was rendered (Nano Banana Pro, 1:1). Exact prompt used:*
 
-Text, geometric sans-serif:
-Headline centered above the cup: "Your coffee wakes you up. Ours has two more jobs."
-Small line under the icons: "Metabolism. Digestion. Same cup."
-Footer, letter-spaced: "LIGHTER DAYS. STEADY ENERGY. 30 SECONDS."
-
-Clean commercial packshot quality, photorealistic product, crisp typography.
 ```
+Minimal conceptual advertising still life, square composition. A single ceramic
+mug of black coffee shot top-down on a warm cream background, soft ring of crema,
+gentle steam. Around the cup, three clean thin-stroke line-art icons in deep
+espresso brown arranged in an evenly spaced row: a sunrise, a flame, a leaf. A
+matte cream-and-espresso "METABO+" stick sachet lies at a slight angle at the
+lower right, label clean and minimal. Bold negative space, soft studio lighting
+with a warm morning feel, no clutter, modern Scandinavian brand design, palette
+of cream #F4EBE0, caramel #C08A4A, espresso #3A2A20 with a single sage-green
+accent.
+
+Text rendered cleanly and correctly spelled in a modern geometric sans-serif:
+Headline centered near the top, two lines, large and bold: "Your coffee wakes you
+up." / "Ours has two more jobs."
+Small body text below the headline, two lines: "METABO+ supports a healthy
+metabolism and easy digestion - in the same cup you already drink every morning."
+Footer line at the bottom, small caps and letter-spaced: "LIGHTER DAYS. STEADY
+ENERGY. 30 SECONDS."
+
+High-end DTC brand advertising, editorial e-commerce quality, photorealistic
+product, crisp legible typography, sharp label. No misspelled or warped text, no
+watermarks, no scales, no tape measures, no before-and-after body shots, no pills
+or capsules, no lab coats or medical imagery.
+```
+
+Icon meanings for the three marks: sunrise = wake up, flame = metabolism, leaf =
+easy digestion. Shorter alternative for the body line if the model crowds the
+frame: `"Metabolism. Digestion. Same cup."`
 
 ---
 
