@@ -1,0 +1,15 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1080, "h": 1350, "title": "Instagram feed 4:5", "print": "fixed" },
+    { "file": "Facebook.dc.html", "x": 1180, "y": 0, "w": 1200, "h": 630, "title": "Facebook feed 1200x630", "print": "fixed" },
+    { "file": "Story.dc.html", "x": 2480, "y": 0, "w": 1080, "h": 1920, "title": "Story 9:16", "print": "fixed" },
+    { "file": "Bean.dc.html", "x": 1180, "y": 760, "w": 780, "h": 560, "title": "Mark & palette", "print": "fixed" },
+    { "file": "DirectionB.dc.html", "x": 0, "y": 2100, "w": 540, "h": 675, "title": "Direction B - sketch", "print": "fixed" },
+    { "file": "DirectionC.dc.html", "x": 640, "y": 2100, "w": 540, "h": 675, "title": "Direction C - sketch", "print": "fixed" }
+  ],
+  "annotations": [
+    { "id": "brief", "x": 0, "y": -230, "w": 700, "text": "A coffee bean scrubbing the grease out of the gut - the campaign line made visual.\nMain, Facebook and Story are the deliverable. [PRODUCT], [BRAND] and [YOUR OFFER] are placeholders to swap in." },
+    { "id": "sketches", "x": 0, "y": 1960, "w": 640, "text": "Two alternate directions, deliberately low-fi. Say which one you would rather see and I will build it out properly." }
+  ],
+  "launch": { "view": "canvas" }
+}
