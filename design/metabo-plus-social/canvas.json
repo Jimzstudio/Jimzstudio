@@ -1,0 +1,14 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html",       "x": 0,    "y": 0,    "w": 1080, "h": 1350, "title": "1 — Cover (leading)", "print": "fixed" },
+    { "file": "Problems.dc.html",   "x": 1200, "y": 0,    "w": 1080, "h": 1350, "title": "2 — The five problems", "print": "fixed" },
+    { "file": "Solution.dc.html",   "x": 2400, "y": 0,    "w": 1080, "h": 1350, "title": "3 — One cup, five fronts", "print": "fixed" },
+    { "file": "CTA.dc.html",        "x": 3600, "y": 0,    "w": 1080, "h": 1350, "title": "4 — Call to action", "print": "fixed" },
+    { "file": "CoverBold.dc.html",  "x": 0,    "y": 1560, "w": 1080, "h": 1350, "title": "Cover alt — Bold", "print": "fixed" }
+  ],
+  "annotations": [
+    { "id": "note-1", "x": 0, "y": -230, "w": 1080, "text": "Instagram carousel, 1080 x 1350 (4:5).\nSlides 1-4 run in order. Caption + hooks are in the chat post." },
+    { "id": "note-2", "x": 1200, "y": 1560, "w": 700, "text": "Alternate cover direction.\n\nBold: burgundy flood, harder hook. Stops the scroll better in a busy feed, but breaks from the light cream look of your 9-ingredient grid.\n\nLeading cover (top row) keeps brand continuity — swap it in if you prefer the louder one." }
+  ],
+  "launch": { "view": "canvas" }
+}
